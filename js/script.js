@@ -48,6 +48,16 @@ function trocarImagem(event) {
 
 galeria.forEach(img => img.addEventListener('click', trocarImagem));
 
+// Mudar página da bicicleta ao clicar na foto da mesma
+const trocarPaginaAoClicar = document.querySelectorAll('.bicicleta-imagens img');
+
+trocarPaginaAoClicar.forEach(imagem => {
+    imagem.addEventListener('click', function() {
+        const pagina = this.getAttribute('data-page');
+        window.location.href = pagina;
+    })
+})
+
 // Animação
 if (window.SimpleAnime) {
     new SimpleAnime();
